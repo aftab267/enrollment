@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
+  <title>Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('node_modules/mdi/css/materialdesignicons.min.css')}}">
   <link rel="stylesheet" href="{{asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}">
@@ -34,11 +34,11 @@
                   @csrf
                 <div class="form-group">
                   <label>Username or email *</label>
-                  <input type="text" class="form-control p_input">
+                  <input type="text" name="admin_email" class="form-control p_input">
                 </div>
                 <div class="form-group">
                   <label>Password *</label>
-                  <input type="text" class="form-control p_input">
+                  <input type="text" name="admin_password" class="form-control p_input">
                 </div>
                 <div class="form-group d-flex align-items-center justify-content-between">
                   <div class="icheck-square">

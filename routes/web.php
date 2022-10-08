@@ -22,3 +22,4 @@ Route::get('/backend', function () {
 });
 //Admin login
 Route::post('/adminlogin',[AdminController::class,'login_dashboard']);
+Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard']);
