@@ -43,7 +43,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/salt_logo.svg" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="{{ URL::to('/admin_dashboard') }}"><img src="images/salt_logo.svg" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -78,7 +78,7 @@
               <span class="count bg-danger">4</span>
               </a>
             <div class="dropdown-menu navbar-dropdown mail-notification" aria-labelledby="MailDropdown">
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="{{URL::to('/viewprofile')}}">
                 <div class="sender-img">
                   <img src="http://via.placeholder.com/47x47" alt="">
                   <span class="badge badge-success">&nbsp;</span>
@@ -87,7 +87,7 @@
                   <p class="Sende-name">View Profile</p>
                   </div>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="{{URL::to('/setting')}}">
                 <div class="sender-img">
                     <img src="http://via.placeholder.com/47x47" alt="">
                 <span class="badge badge-success">&nbsp;</span>
@@ -96,7 +96,7 @@
                   <p class="Sende-name">Setting</p>
                 </div>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="{{URL::to('/logout')}}">
                 <div class="sender-img">
                     <img src="http://via.placeholder.com/47x47" alt="">
                 <span class="badge badge-success">&nbsp;</span>
@@ -123,7 +123,7 @@
               <img src="http://via.placeholder.com/47x47" alt="">
             </div>
             <div class="details">
-              <p class="user-name">Dave Mattew</p>
+              <p class="user-name">Shahidul Islam</p>
               <p class="designation">Developer</p>
             </div>
           </div>
@@ -133,13 +133,13 @@
               <span class="nav-link">Main</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{{ url('/allstudent') }}">
                 <i class="mdi mdi-gauge menu-icon"></i>
                 <span class="menu-title">All Students</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/widgets.html">
+              <a class="nav-link" href="{{URL::to('/addstudent')}}">
                 <i class="mdi mdi-puzzle menu-icon"></i>
                 <span class="menu-title">Add Student</span>
                 <span class="badge badge-danger badge-pill ml-auto">New</span>
@@ -154,12 +154,11 @@
               <div class="collapse" id="layoutsSubmenu">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/boxed-layout.html">Tuition Fee</a>
+                    <a class="nav-link" href="{{ URL::to('/tuitionfee') }}">Tuition Fee</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/rtl-layout.html">Result</a>
+                    <a class="nav-link" href="{{ URL::to('/result') }}">Result</a>
                   </li>
-
                 </ul>
               </div>
             </li>
@@ -172,19 +171,19 @@
               <div class="collapse" id="sidebar_layouts">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/compact-menu.html">CSE</a>
+                    <a class="nav-link" href="{{ URL::to('/cse') }}">CSE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-collapsed.html">BBA</a>
+                    <a class="nav-link" href="{{ URL::to('/bba') }}">BBA</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-hidden.html">ECE</a>
+                    <a class="nav-link" href="{{ URL::to('/ece') }}">ECE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-hidden-overlay.html">EEE</a>
+                    <a class="nav-link" href="{{ URL::to('/eee') }}">EEE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/layout/sidebar-fixed.html">MBA</a>
+                    <a class="nav-link" href="{{ URL::to('/mba') }}">MBA</a>
                   </li>
                 </ul>
               </div>
@@ -203,47 +202,19 @@
               <div class="collapse" id="chartsSubmenu">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a>
+                    <a class="nav-link" href="{{ URL::to('/allteachers') }}">All Teachers</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/morris.html">Morris</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/flot-chart.html">Float</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/google-charts.html">Google charts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/sparkline.html">Sparkline js</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/c3.html">C3 charts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/chartist.html">Chartists</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/rickshaw.html">Rickshaw</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/charts/justGage.html">JustGage</a>
-                  </li>
+
                 </ul>
               </div>
             </li>
-
-
           </ul>
         </nav>
         <!-- partial -->
         <div class="content-wrapper">
           <div class="row">
-
             @yield('content')
           </div>
-
-
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -261,7 +232,6 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
   <!-- plugins:js -->
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -290,8 +260,5 @@
   <script src="js/dashboard_1.js"></script>
   <!-- End custom js for this page-->
 </body>
-
-
-<!-- Mirrored from www.urbanui.com/salt/jquery/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Dec 2017 12:32:50 GMT -->
 </html>
 

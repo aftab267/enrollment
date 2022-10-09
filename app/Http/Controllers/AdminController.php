@@ -11,6 +11,14 @@ Session_start();
 
 class AdminController extends Controller
 {
+      //Logout
+    public function logout(){
+        session::put('admin_name',null);
+        session::put('admin_id',null);
+        return Redirect::to('/backend');
+
+    }
+    //Dashboard
     public function login_dashboard(Request $request){
         //return view('admin.dashboard');
         $email= $request->admin_email;
@@ -27,7 +35,6 @@ class AdminController extends Controller
             Session::put('exception','Email or Password Invalid');
             return Redirect::to('/backend');
         }
-
         if($result){
             return Redirect::to('/admin_dashboard');
         }else{
@@ -36,5 +43,13 @@ class AdminController extends Controller
     }
     public function admin_dashboard(){
         return view('admin.dashboard');
+    }
+    // viewprofile page
+    public function viewprofile(){
+        return view('admin.view');
+    }
+    // setting page
+    public function setting(){
+        return view('admin.setting');
     }
 }
