@@ -250,6 +250,10 @@
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
   <!-- End plugin js for this page-->
+
+  <script src="../../node_modules/datatables.net/js/jquery.dataTables.js"></script>
+  <script src="../../node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+  <script src="../../js/data-table.js"></script>
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>

@@ -5,6 +5,14 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">Add Student</h2>
+            <p class="alert-success">
+                @php
+                $exception=Session::get('exception');
+                if($exception){
+                    echo $exception;
+                    Session::put('exception',null);                }
+                 @endphp
+             </p>
             <form class="forms-sample" method="post" action="{{ URL::to('save_student') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
