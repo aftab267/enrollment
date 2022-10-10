@@ -15,7 +15,7 @@ class AddstudentController extends Controller
         return view('admin.addstudent');
     }
     public function savestudent(Request $request){
-        $data=$request->all();
+            $data=$request->all();
             $student= new student_tbl();
             $student->student_name = $data['student_name'];
             $student->student_roll = $data['student_roll'];
@@ -28,19 +28,19 @@ class AddstudentController extends Controller
             $student->student_password = $data['student_password'];
             $student->student_department = $data['student_department'];
             $student->student_admissionyear = $data['student_admissionyear'];
-            $student->save();
+            //$student->save();
 
             if($request->hasfile('student_image')){
             $file=$request->file('student_image');
             $extention=$file->getClientOriginalExtension();
-            $filename=time() .'.'.$extention;
+            $filename=time().'.'.$extention;
             $file->move('uploads/student/',$filename);
             $student->student_image=$filename;
-            }else{
-                return $request;
-                $student->student_image='';
             }
-
+            $student->save();
+            //return redirect()->back()->with('status','Student Added Successfully');
+            //return $request;
+                //$student->student_image='';
 
             Session::put('exception','Student Added Successfully');
             return Redirect::to('/addstudent');

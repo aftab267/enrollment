@@ -61,11 +61,11 @@
                 <div class="form-group">
                     <label for="exampleInputPassword1">Student Department</label>
                     <select class="form-control p-input"  name="student_department" id="">
-                        <option value="1">CSE</option>
-                        <option value="2">BBA</option>
-                        <option value="3">MBA</option>
-                        <option value="4">CCE</option>
-                        <option value="5">EEE</option>
+                        <option value="CSE">CSE</option>
+                        <option value="BBA">BBA</option>
+                        <option value="MBA">MBA</option>
+                        <option value="CCE">CCE</option>
+                        <option value="EEE">EEE</option>
                     </select>
                 </div>
                 <div class="form-group">
