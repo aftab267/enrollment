@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Data table</h2>
+        <h2 class="card-title">All Students Table</h2>
         <div class="row">
           <div class="col-12">
             <table id="order-listing" class="table table-striped" style="width:100%;">
@@ -34,7 +34,7 @@
                     <td>
                       <button class="btn btn-outline-primary">View</button>
                       <button class="btn btn-outline-primary">Edit</button>
-                      <button class="btn btn-outline-danger">Delete</button>
+                      <a href="{{ URL::to('/student_delete/' .$data->student_id) }}" id="delete"><button class="btn btn-outline-danger">Delete</button></a>
                     </td>
                 </tr>
                 @endforeach

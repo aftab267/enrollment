@@ -38,9 +38,10 @@ Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard']);
 Route::get('/viewprofile',[AdminController::class,'viewprofile']);
 Route::get('/setting',[AdminController::class,'setting']);
 
-//Addstudent
+//student
 Route::get('/addstudent',[AddstudentController::class,'addstudent']);
 Route::post('/save_student',[AddstudentController::class,'savestudent']);
+Route::get('/student_delete/{student_is}',[AllstudentsController::class,'studentdelete']);
 
 //Allstudent
 Route::get('/allstudent',[AllstudentsController::class,'allstudent']);

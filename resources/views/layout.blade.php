@@ -259,6 +259,19 @@
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/misc.js"></script>
   <script src="js/settings.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js"></script>
+ <script>
+    $(document).on('click', "#delete",function(e){
+        e.preventDefault();
+        var link=$(this).attr('href');
+        bootbox.confirm("Are you want to delete!!",function(confirmed){
+            if(confirmed){
+                window.location.href=link;
+            };
+        });
+    });
+
+ </script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="js/dashboard_1.js"></script>
