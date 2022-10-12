@@ -52,7 +52,8 @@
                     <label>Upload file</label>
                     <div class="row">
                       <div class="col-12">
-                        <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label>
+                        <label for="exampleInputFile2" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-upload btn-label btn-label-left"></i>Browse</label><br>
+                        <label>width= 80px height= 80px </label>
                         <input type="file" name="student_image" class="form-control-file" id="exampleInputFile2" aria-describedby="fileHelp">
 
                       </div>

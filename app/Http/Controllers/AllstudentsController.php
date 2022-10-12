@@ -14,11 +14,20 @@ class AllstudentsController extends Controller
         $result=student_tbl::all();
         return view('admin.allstudent',compact('result'));
     }
+    // Student delete method here
     public function studentdelete($student_id){
         DB::table('student_tbls')->where('student_id',$student_id)->delete();
         return Redirect::to('/allstudent');
-
-        // $result=student_tbl::all();
-        // return view('admin.allstudent',compact('result'));
 }
+    // Student View method here
+    public function studentview($student_id){
+        $result=DB::table('student_tbls')->select('*')->where('student_id',$student_id)->first();
+
+        // echo "<pre>";
+        // print_r($result);
+        // "</pre>";
+        return view('admin.view',['result_key'=>$result]);
+}
+
+
 }

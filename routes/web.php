@@ -41,7 +41,8 @@ Route::get('/setting',[AdminController::class,'setting']);
 //student
 Route::get('/addstudent',[AddstudentController::class,'addstudent']);
 Route::post('/save_student',[AddstudentController::class,'savestudent']);
-Route::get('/student_delete/{student_is}',[AllstudentsController::class,'studentdelete']);
+Route::get('/student_delete/{student_id}',[AllstudentsController::class,'studentdelete']);
+Route::get('/student_view/{student_id}',[AllstudentsController::class,'studentview']);
 
 //Allstudent
 Route::get('/allstudent',[AllstudentsController::class,'allstudent']);

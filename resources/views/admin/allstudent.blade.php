@@ -28,11 +28,11 @@
                     <td>{{ $data->student_roll }}</td>
                     <td>{{ $data->student_name }}</td>
                     <td>{{ $data->student_phone }}</td>
-                    <td><img src="{{asset('uploads/student/'.$data->student_image) }}" width= '100' height='80' alt=""> </td>
+                    <td><img src="{{asset('uploads/student/'.$data->student_image) }}" width= '80'  alt=""> </td>
                     <td>{{ $data->student_address }}</td>
                     <td>{{ $data->student_department }}</td>
                     <td>
-                      <button class="btn btn-outline-primary">View</button>
+                      <a href="{{ URL::to('/student_view/'.$data->student_id) }}"><button class="btn btn-outline-primary">View</button></a>
                       <button class="btn btn-outline-primary">Edit</button>
                       <a href="{{ URL::to('/student_delete/' .$data->student_id) }}" id="delete"><button class="btn btn-outline-danger">Delete</button></a>
                     </td>
