@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Salt Admin</title>
+  <title>Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('node_modules/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{asset('node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}">
@@ -53,13 +53,13 @@
           <button type="button" class="btn btn-secondary btn-sm text-muted border-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </button>
-          <div class="dropdown-menu">
+          {{-- <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
-          </div>
+          </div> --}}
         </div>
         <form class="form-inline mt-2 ml-3 mt-md-0 d-none d-sm-block">
           <div class="input-group solid">
@@ -123,7 +123,7 @@
               <img src="http://via.placeholder.com/47x47" alt="">
             </div>
             <div class="details">
-              <p class="user-name">Shahidul Islam</p>
+              <p class="user-name">Kazi Aftabur Rahman</p>
               <p class="designation">Developer</p>
             </div>
           </div>
@@ -210,7 +210,15 @@
 
                 </ul>
               </div>
+
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL::to('/logout')}}">
+                  <i class="mdi mdi-puzzle menu-icon"></i>
+                  <span class="menu-title">Logout</span>
+
+                </a>
+              </li>
           </ul>
         </nav>
         <!-- partial -->

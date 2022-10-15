@@ -22,7 +22,7 @@
                     <th>Address</th>
                     <th>Image</th>
                     <th>Department</th>
-                    <th>Actions</th>
+                    {{-- <th>Actions</th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -37,11 +37,11 @@
                     <td>{{ $data->teachers_address }}</td>
                     <td><img src="{{asset('uploads/teacher/'.$data->teachers_image) }}" width= '80' style="border-radius: 50%;"  alt=""> </td>
                     <td>{{ $data->teachers_department }}</td>
-                    <td>
+                    {{-- <td>
                       <a href="{{ URL::to('/student_view/'.$data->teachers_id) }}"><button class="btn btn-outline-primary">View</button></a>
                       <a href="{{ URL::to('/student_edit/'.$data->teachers_id) }}"><button class="btn btn-outline-primary">Edit</button></a>
                       <a href="{{ URL::to('/student_delete/' .$data->teachers_id) }}" id="delete"><button class="btn btn-outline-danger">Delete</button></a>
-                    </td>
+                    </td> --}}
                 </tr>
                 @endforeach
               </tbody>

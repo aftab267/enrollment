@@ -28,41 +28,42 @@
         <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
           <div class="card col-lg-4 mx-auto">
             <div class="card-body px-5 py-5">
-              <h3 class="card-title text-left mb-3">Student Login</h3>
-              <p class="alert-danger">
+              <h1 style="font-size: 60px">Student Management System</h1>
+              {{-- <p class="alert-danger">
                 @php
                 $exception=Session::get('exception');
                 if($exception){
                     echo $exception;
                     Session::put('exception',null);                }
                  @endphp
-             </p>
+             </p> --}}
 
               <form method="POST" action="{{url('/studentlogin') }}">
                   @csrf
                 <div class="form-group">
-                  <label>Email *</label>
-                  <input type="email" name="Student_email" class="form-control p_input">
+                    <p style="font-size: 20px">Domain/backend to go admin dashboard login.</p>
+                  {{-- <label>Domain/backend</label> --}}
+                  {{-- <input type="email" name="Student_email" class="form-control p_input"> --}}
                 </div>
                 <div class="form-group">
-                  <label>Password *</label>
-                  <input type="password" name="student_password" class="form-control p_input">
+                  {{-- <label>Password *</label>
+                  <input type="password" name="student_password" class="form-control p_input"> --}}
                 </div>
                 <div class="form-group d-flex align-items-center justify-content-between">
                   <div class="icheck-square">
-                    <input tabindex="1" type="checkbox" id="remember">
-                    <label for="remember">Remember me</label>
+                    {{-- <input tabindex="1" type="checkbox" id="remember">
+                    <label for="remember">Remember me</label> --}}
                   </div>
-                  <a href="#" class="forgot-pass">Forgot password</a>
+                  {{-- <a href="#" class="forgot-pass">Forgot password</a> --}}
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+                  {{-- <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button> --}}
                 </div>
                 <div class="d-flex justify-content-center mb-4">
-                  <a href="#" class="facebook-login btn btn-facebook mr-2">Facebook</a>
-                  <a href="#" class="google-login btn btn-google">Google+</a>
+                  {{-- <a href="#" class="facebook-login btn btn-facebook mr-2">Facebook</a>
+                  <a href="#" class="google-login btn btn-google">Google+</a> --}}
                 </div>
-                <small class="text-center d-block">Don't have an Account?<a href="#"> Sign Up</a></small>
+                {{-- <small class="text-center d-block">Don't have an Account?<a href="#"> Sign Up</a></small> --}}
               </form>
 
             </div>
@@ -88,7 +89,4 @@
   <script src="{{asset('js/settings.js')}}"></script>
   <!-- endinject -->
 </body>
-
-
-
 </html>

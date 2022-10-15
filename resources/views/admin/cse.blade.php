@@ -16,7 +16,7 @@
                   <th>Image</th>
                   <th>Address</th>
                   <th>Department</th>
-                  <th>Actions</th>
+                  {{-- <th>Actions</th> --}}
               </tr>
             </thead>
             <tbody>
@@ -32,11 +32,11 @@
                   <td><img src="{{asset('uploads/student/'.$data->student_image) }}" width= '100' height='80' alt=""> </td>
                   <td>{{ $data->student_address }}</td>
                   <td>{{ $data->student_department }}</td>
-                  <td>
+                  {{-- <td>
                     <button class="btn btn-outline-primary">View</button>
                     <button class="btn btn-outline-primary">Edit</button>
                     <button class="btn btn-outline-danger">Delete</button>
-                  </td>
+                  </td> --}}
               </tr>
               @endforeach
 
