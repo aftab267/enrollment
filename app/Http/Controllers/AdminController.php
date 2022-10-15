@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Admin_tbl;
+use App\Models\student_tbl;
 
 use Illuminate\Http\Request;
 use DB;
@@ -18,7 +19,7 @@ class AdminController extends Controller
         return Redirect::to('/backend');
 
     }
-    //Dashboard
+    //Admin Dashboard
     public function login_dashboard(Request $request){
         //return view('admin.dashboard');
         $email= $request->admin_email;
@@ -41,8 +42,38 @@ class AdminController extends Controller
             return Redirect::to('/backend');
         }
     }
+     //student Dashboard
+     public function student_login_dashboard(Request $request){
+        //return view('admin.dashboard');
+        $email= $request->student_email;
+        $password=$request->student_password;
+        $results=DB::table('student_tbls')
+        ->where('student_email',$email)
+        ->where('student_password',$password)->first();
+
+        // echo "<pre>";
+        // print_r($result);
+        if($results){
+
+            return Redirect::to('/student_dashboard');
+        }else{
+
+            return Redirect::to('/');
+        }
+        if($results){
+            return Redirect::to('/student_dashboard');
+        }else{
+            return Redirect::to('/');
+        }
+
+    }
+
     public function admin_dashboard(){
         return view('admin.dashboard');
+    }
+    //student login dashboard
+    public function student_dashboard(){
+        return view('student.dashboard');
     }
     // viewprofile page
     public function viewprofile(){

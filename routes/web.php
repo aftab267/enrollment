@@ -34,6 +34,9 @@ Route::get('/backend', function () {
 });
 //Admin login
 Route::post('/adminlogin',[AdminController::class,'login_dashboard']);
+Route::post('/studentlogin',[AdminController::class,'student_login_dashboard']);
+Route::post('/student_dashboard',[AdminController::class,'student_dashboard']);
+
 Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard']);
 Route::get('/viewprofile',[AdminController::class,'viewprofile']);
 Route::get('/setting',[AdminController::class,'setting']);
@@ -61,4 +64,6 @@ Route::get('/eee',[EeeController::class,'eee']);
 //mba
 Route::get('/mba',[MbaController::class,'mba']);
 //allteachers
+Route::get('/addteachers',[TeacherController::class,'addteachers']);
 Route::get('/allteachers',[TeacherController::class,'allteachers']);
+Route::post('/save_teacher',[TeacherController::class,'saveteacher']);
