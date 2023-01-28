@@ -45,26 +45,25 @@ class AdminController extends Controller
      //student Dashboard
      public function student_login_dashboard(Request $request){
         //return view('admin.dashboard');
-        $email= $request->student_email;
+        $email=$request->student_email;
         $password=$request->student_password;
-        $results=DB::table('student_tbls')
+        $result=DB::table('student_tbls')
         ->where('student_email',$email)
-        ->where('student_password',$password)->first();
+        ->where('student_password',$password)
+        ->first();
 
-        // echo "<pre>";
-        // print_r($result);
-        if($results){
-
+        //  echo "<pre>";
+        //  print_r($results);
+        if($result){
+            Session::put('student_email',$result->student_email);
+            Session::put('student_id',$result->student_id);
             return Redirect::to('/student_dashboard');
         }else{
+            Session::put('exception','Email or Password Invalid');
+            return Redirect::to('/');
+        }
 
-            return Redirect::to('/');
-        }
-        if($results){
-            return Redirect::to('/student_dashboard');
-        }else{
-            return Redirect::to('/');
-        }
+
 
     }
 
@@ -77,7 +76,7 @@ class AdminController extends Controller
     }
     // viewprofile page
     public function viewprofile(){
-        return view('admin.view');
+         return view('admin.view');
     }
     // setting page
     public function setting(){
