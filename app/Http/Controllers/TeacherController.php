@@ -20,6 +20,14 @@ class TeacherController extends Controller
     }
     // save teacher
     public function saveteacher(Request $request){
+        $request->validate([
+            'teachers_name' => 'required',
+            'teachers_phone' => 'required',
+            'teachers_address' => 'required',
+            'teachers_department' => 'required',
+            'teachers_image' => 'required',
+            
+        ]);
         $data=$request->all();
         $teacher= new teacher();
         $teacher->teachers_name = $data['teachers_name'];
