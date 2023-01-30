@@ -1,3 +1,9 @@
+@php
+$student_id=Session::get('student_id');
+$result=DB::table('student_tbls')->select('*')->where('student_id',$student_id)->first();
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +49,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-light col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper">
-        <a class="navbar-brand brand-logo" href="{{ URL::to('/admin_dashboard') }}"><img src="images/salt_logo.svg" alt="Logo"></a>
+        <a class="navbar-brand brand-logo" href="{{ URL::to('/student_dashboard') }}"><img src="images/salt_logo.svg" alt="Logo"></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <button class="navbar-toggler navbar-toggler align-self-center mr-2" type="button" data-toggle="minimize">
@@ -80,11 +86,11 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <div class="user-info">
             <div class="profile">
-              <img src="http://via.placeholder.com/47x47" alt="">
+                <img src="{{asset('uploads/student/'.$result->student_image) }}"   alt="">
             </div>
             <div class="details">
-              <p class="user-name">Shahidul Islam</p>
-              <p class="designation">Developer</p>
+              <p class="user-name">{{strtoupper($result->student_name) }}</p>
+              {{-- <p class="designation">Developer</p> --}}
             </div>
           </div>
           <ul class="nav">
@@ -93,19 +99,16 @@
               <span class="nav-link">Main</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('') }}">
-                <i class="mdi mdi-gauge menu-icon"></i>
-                <span class="menu-title">All Students</span>
-              </a>
-              <a class="nav-link" href="{{ url('') }}">
-                <i class="mdi mdi-gauge menu-icon"></i>
-                <span class="menu-title">Setting</span>
-              </a>
-              <a class="nav-link" href="{{ url('') }}">
+
+              <a class="nav-link" href="{{ url::to('/student_profile') }}">
                 <i class="mdi mdi-gauge menu-icon"></i>
                 <span class="menu-title">Profile</span>
               </a>
-              <a class="nav-link" href="{{ url('') }}">
+              <a class="nav-link" href="{{ url::to('/student_setting') }}">
+                <i class="mdi mdi-gauge menu-icon"></i>
+                <span class="menu-title">Setting</span>
+              </a>
+              <a class="nav-link" href="{{ url::to('/student_logout') }}">
                 <i class="mdi mdi-gauge menu-icon"></i>
                 <span class="menu-title">Logout</span>
               </a>

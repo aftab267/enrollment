@@ -11,6 +11,7 @@ Session_start();
 
 class AddstudentController extends Controller
 {
+    // add student
     public function addstudent(){
         return view('admin.addstudent');
     }
@@ -44,6 +45,16 @@ class AddstudentController extends Controller
 
             Session::put('exception','Student Added Successfully');
             return Redirect::to('/addstudent');
+    }
+
+    public function Studentprofile(){
+            $student_id=session::get('student_id');
+            $result=DB::table('student_tbls')->select('*')->where('student_id',$student_id)->first();
+
+            //  echo "<pre>";
+            // print_r($result);
+            // "</pre>";
+            return view('student.student_view',['result_key'=>$result]);
     }
 
 

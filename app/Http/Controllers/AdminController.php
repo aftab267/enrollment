@@ -12,11 +12,19 @@ Session_start();
 
 class AdminController extends Controller
 {
-      //Logout
+      //Admin Logout
     public function logout(){
         session::put('admin_name',null);
         session::put('admin_id',null);
         return Redirect::to('/backend');
+
+    }
+
+      //Student Logout
+      public function student_logout(){
+        session::put('student_name',null);
+        session::put('student_id',null);
+        return Redirect::to('/');
 
     }
     //Admin Dashboard
@@ -82,4 +90,17 @@ class AdminController extends Controller
     public function setting(){
         return view('admin.setting');
     }
+    //Student setting
+        public function studentSetting(){
+            $student_id=Session::get('student_id');
+            $result=DB::table('student_tbls')->select('*')->where('student_id',$student_id)->first();
+
+            // echo "<pre>";
+             //print_r($result);
+             //"</pre>";
+            return view('student.student_setting',['result_key'=>$result]);
+
+        }
+        //return view('student.student_setting');
+
 }

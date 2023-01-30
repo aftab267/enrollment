@@ -57,15 +57,23 @@ class AllstudentsController extends Controller
         $result=DB::table('student_tbls')->where('student_id',$student_id)->update($data);
         Session::put('exception',' Student Updated Successfully.');
         return Redirect::to('/allstudent');
-
-
         //return view('admin.student_edit',['result_key'=>$result]);
+     }
+      //Student update setting are here
+    public function studentownupdate(Request $request ){
+
+        $student_id=Session::get('student_id');
+        $data=array();
+        $data['student_phone']=$request->student_phone;
+        $data['student_address']=$request->student_address;
+        $data['student_password']=$request->student_password;
 
 
 
+        $result=DB::table('student_tbls')->where('student_id',$student_id)->update($data);
+        Session::put('exception',' Student Updated Successfully.');
+        return Redirect::to('/student_setting');
+        //return view('admin.student_edit',['result_key'=>$result]);
+     }
 
-
-
-
-}
 }

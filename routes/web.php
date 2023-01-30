@@ -25,6 +25,7 @@ use App\Http\Controllers\TeacherController;
 */
 //Logout
 Route::get('/logout',[AdminController::class,'logout']);
+Route::get('/student_logout',[AdminController::class,'student_logout']);
 
 Route::get('/', function () {
     return view('student_login');
@@ -41,6 +42,7 @@ Route::get('/student_dashboard',[AdminController::class,'student_dashboard']);
 Route::get('/admin_dashboard',[AdminController::class,'admin_dashboard']);
 Route::get('/viewprofile',[AdminController::class,'viewprofile']);
 Route::get('/setting',[AdminController::class,'setting']);
+Route::get('/student_setting',[AdminController::class,'studentSetting']);
 
 //student
 Route::get('/addstudent',[AddstudentController::class,'addstudent']);
@@ -49,6 +51,11 @@ Route::get('/student_delete/{student_id}',[AllstudentsController::class,'student
 Route::get('/student_view/{student_id}',[AllstudentsController::class,'studentview']);
 Route::get('/student_edit/{student_id}',[AllstudentsController::class,'studentedit']);
 Route::post('/update_student/{student_id}',[AllstudentsController::class,'studentupdate']);
+
+//student
+Route::get('/student_profile',[AddstudentController::class,'Studentprofile']);
+Route::post('/student_own_update',[AllstudentsController::class,'studentownupdate']);
+
 
 //Allstudent
 Route::get('/allstudent',[AllstudentsController::class,'allstudent']);
